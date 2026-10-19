@@ -77,6 +77,7 @@ module ActiveRecordDoctor
           model.validators.each do |validator|
             problematic_columns.reject! do |column|
               attribute_names = [
+                column.name,
                 column.name.to_sym,
                 column_name_to_association_name[column.name]
               ].compact
